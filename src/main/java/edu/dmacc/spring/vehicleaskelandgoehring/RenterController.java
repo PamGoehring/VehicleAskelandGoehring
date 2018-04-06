@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class RenterController {
 	
 @RequestMapping(value="/form")
-public ModelAndView user() {
+public ModelAndView renter() {
 	ModelAndView modelAndView = new ModelAndView();
 	
 	modelAndView.setViewName("renterForm");
