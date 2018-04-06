@@ -1,5 +1,11 @@
 package edu.dmacc.spring.vehicleaskelandgoehring;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="renter")
+
 public class Renter {
 	private int renterId;
 	private String firstName;
@@ -72,7 +78,10 @@ public class Renter {
 	public void setZip(String zip) {
 		this.zip = zip;
 	}
-	
+	public Renter() {
+		super();
+		// TODO Auto-generated constructor stub
+	}	
 	
 }
 
