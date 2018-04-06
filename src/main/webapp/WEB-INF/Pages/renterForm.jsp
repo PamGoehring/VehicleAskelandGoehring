@@ -17,8 +17,8 @@
 	        <td><mvc:input path="firstName" /></td>
 	    </tr>
 	    <tr>
-	        <td><mvc:label path="lastname">Last Name</mvc:label></td>
-	        <td><mvc:input path="lastname" /></td>
+	        <td><mvc:label path="lastName">Last Name</mvc:label></td>
+	        <td><mvc:input path="lastName" /></td>
 	    </tr>
 	    <tr>
 	        <td><mvc:label path="age">Age</mvc:label></td>
