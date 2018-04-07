@@ -18,7 +18,7 @@ public class RenterDao {
 		em.close();
 	}
 	
-	public List<Renter> getAllUsers(){
+	public List<Renter> getAllRenters(){
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
 		String q = "select r from Renter r";

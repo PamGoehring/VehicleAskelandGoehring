@@ -47,7 +47,7 @@
             <td>${r.zip}</td>
         </tr>
         </table>
-<a href = "viewAll.mvc">View all Users</a>
+<a href = "viewAllRenters.mvc">View all Renters</a>
 
 </body>
 </html>
