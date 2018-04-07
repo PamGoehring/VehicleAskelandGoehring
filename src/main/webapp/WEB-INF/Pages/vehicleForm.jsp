@@ -32,6 +32,11 @@
 				<td><mvc:label path="model">Model</mvc:label></td>
 				<td><mvc:input path="model" /></td>
 			</tr>
+			<tr>
+	        <td colspan="2">
+                <input type="submit" value="Submit" />
+	        </td>
+	    </tr>
 
 		</table>
 	</mvc:form>

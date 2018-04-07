@@ -11,13 +11,23 @@ import org.springframework.context.annotation.Bean;
 @Controller
 public class RenterController {
 	@Autowired RenterDao dao;
-	
+
+//Renter Entry Form
 @RequestMapping(value = "/form")
 public ModelAndView renter() {
 	ModelAndView modelAndView = new ModelAndView();
 	modelAndView.setViewName("renterForm");
 	modelAndView.addObject("renter", new Renter());
 	//Add state drop down logic here and above?
+	return modelAndView;
+}
+
+//Vehicle Entry Form
+@RequestMapping(value = "/vehicleForm")
+public ModelAndView vehicle() {
+	ModelAndView modelAndView = new ModelAndView();
+	modelAndView.setViewName("vehicleForm");
+	modelAndView.addObject("vehicle", new Vehicle());
 	return modelAndView;
 }
 
@@ -28,7 +38,8 @@ public ModelAndView renter1() {
 
 	return modelAndView;
 }
-	
+
+//Home page with links to renter and vehicle
 @RequestMapping(value = "/home")
 public ModelAndView main() {
 	ModelAndView modelAndView = new ModelAndView();
@@ -37,6 +48,7 @@ public ModelAndView main() {
 	return modelAndView;
 }
 
+//Renter result page
 @RequestMapping(value = "/result")
 public ModelAndView processRenter(Renter renter) {
 	System.out.println("In processRenter");
@@ -48,6 +60,7 @@ public ModelAndView processRenter(Renter renter) {
 	return modelAndView;
 }
 
+//Renter view all renters page
 @RequestMapping(value = "/viewAllRenters")
 public ModelAndView viewAll() {
 	ModelAndView modelAndView = new ModelAndView();

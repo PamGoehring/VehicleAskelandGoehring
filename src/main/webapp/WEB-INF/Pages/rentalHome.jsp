@@ -8,6 +8,6 @@
 </head>
 <body>
 <a href = "form.mvc">Add Renter Information</a>
-<a href = "renterform.mvc">Select Vehicle Information</a>
+<a href = "vehicleForm.mvc">Select Vehicle Information</a>
 
 </html>
