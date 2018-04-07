@@ -2,7 +2,7 @@ package edu.dmacc.spring.vehicleaskelandgoehring;
 
 public class Vehicle {
 	private int vehicleId;
-	private int vehicleType;
+	private String vehicleType;
 	private double cost;
 	private int numberOfPassengers;
 	private String make;
@@ -21,11 +21,12 @@ public class Vehicle {
 		this.vehicleId = vehicleId;
 	}
 
-	public int getVehicleType() {
+
+	public String getVehicleType() {
 		return vehicleType;
 	}
 
-	public void setVehicleType(int vehicleType) {
+	public void setVehicleType(String vehicleType) {
 		this.vehicleType = vehicleType;
 	}
 
