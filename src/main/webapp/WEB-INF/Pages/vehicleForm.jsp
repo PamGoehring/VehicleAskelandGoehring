@@ -10,19 +10,11 @@
 </head>
 <body>
 	<h2>Vehicle Form</h2>
-	<mvc:form modelAttribute="vehicle" action="result.mvc">
+	<mvc:form modelAttribute="vehicle" action="vehicleResult.mvc">
 		<table>
 			<tr>
 				<td><mvc:label path="vehicleType">Vehicle Type</mvc:label></td>
-				<td><mvc:input path="vehicleType" /></td>
-			</tr>
-			<tr>
-				<td><mvc:label path="cost">Cost</mvc:label></td>
-				<td><mvc:input path="cost" /></td>
-			</tr>
-			<tr>
-				<td><mvc:label path="numberOfPassengers">Number of Passengers</mvc:label></td>
-				<td><mvc:input path="numberOfPassengers" /></td>
+				<td><mvc:select path="vehicleType" items="${vehicleTypes}" /></td>
 			</tr>
 			<tr>
 				<td><mvc:label path="make">Make</mvc:label></td>
@@ -31,6 +23,14 @@
 			<tr>
 				<td><mvc:label path="model">Model</mvc:label></td>
 				<td><mvc:input path="model" /></td>
+			</tr>
+			<tr>
+				<td><mvc:label path="cost">Cost</mvc:label></td>
+				<td><mvc:input path="cost" /></td>
+			</tr>
+			<tr>
+				<td><mvc:label path="numberOfPassengers">Number of Passengers</mvc:label></td>
+				<td><mvc:input path="numberOfPassengers" /></td>
 			</tr>
 			<tr>
 	        <td colspan="2">
