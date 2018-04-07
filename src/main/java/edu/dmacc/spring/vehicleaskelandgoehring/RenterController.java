@@ -3,6 +3,7 @@ package edu.dmacc.spring.vehicleaskelandgoehring;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 
@@ -44,6 +45,15 @@ public ModelAndView processRenter(Renter renter) {
 	System.out.println("Value in getfirstName"+ renter.getFirstName());
 	modelAndView.setViewName("renterResult");
 	modelAndView.addObject("r", renter);
+	return modelAndView;
+}
+
+@RequestMapping(value = "/viewAllRenters")
+public ModelAndView viewAll() {
+	ModelAndView modelAndView = new ModelAndView();
+	List<Renter> allRenters = dao.getAllRenters();
+	modelAndView.setViewName("viewAllRenters");
+	modelAndView.addObject("all", allRenters);
 	return modelAndView;
 }
 

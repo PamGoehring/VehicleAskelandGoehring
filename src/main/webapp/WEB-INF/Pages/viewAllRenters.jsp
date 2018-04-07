@@ -54,6 +54,6 @@
 		<hr style="text-align: left; margin-left: 0; width: 25%">
 		<br />
 	</c:forEach>
-	<a href="form.mvc">Add a new renter</a>
+	<a href="home.mvc">Add a new renter</a>
 </body>
 </html>
