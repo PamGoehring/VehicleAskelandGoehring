@@ -42,7 +42,8 @@
         </tr>
         <tr>
             <td><mvc:label path="state">State</mvc:label></td>
-            <td><mvc:input path="state" /></td>
+            <td><mvc:select path="state" items="${states}" /></td>
+<%--             <td><mvc:input path="state" /></td> --%>
         </tr>
         <tr>
             <td><mvc:label path="zip">Zip</mvc:label></td>
