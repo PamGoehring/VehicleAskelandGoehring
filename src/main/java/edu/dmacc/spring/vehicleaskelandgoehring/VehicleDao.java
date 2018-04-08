@@ -26,4 +26,39 @@ public class VehicleDao {
 		List<Vehicle> all = typedQuery.getResultList();
 		return all;
 	}
+	
+	public void deleteVehicle(Vehicle vehicletoDelete) {
+		// TODO Auto-generated method stub
+		EntityManager em = emfactory.createEntityManager();
+		em.getTransaction().begin();
+		TypedQuery<Vehicle> typedQuery = em.createQuery(
+				"select li from Vehicle li where li.vehicleId = :selectedId",
+				Vehicle.class);
+		typedQuery.setParameter("selectedId", vehicletoDelete.getVehicleId()); 
+		typedQuery.setMaxResults(1);
+		Vehicle result = typedQuery.getSingleResult();
+		System.out.println("TEST - result: " + result);
+		em.remove(result);
+		em.getTransaction().commit();
+		em.close();
+	}
+
+	public Vehicle searchForVehicleById(int idToEdit) {
+		// TODO Auto-generated method stub
+		EntityManager em = emfactory.createEntityManager();
+		em.getTransaction().begin();
+		
+		Vehicle foundItem =  em.find(Vehicle.class, idToEdit);
+		em.close();
+		return foundItem; 
+	}
+
+	public void editVehicle(Vehicle toEdit) {
+		// TODO Auto-generated method stub
+		EntityManager em = emfactory.createEntityManager();
+		em.getTransaction().begin(); 
+		em.merge(toEdit);
+		em.getTransaction().commit();
+		em.close();
+	}
 }

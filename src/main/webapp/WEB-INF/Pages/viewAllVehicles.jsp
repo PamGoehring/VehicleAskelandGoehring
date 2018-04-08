@@ -8,35 +8,66 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>All Vehicles</title>
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 60%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 4px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
 </head>
 <body>
-	<c:forEach items="${all}" var="item">
+<h2>All Available Vehicles</h2>
+	<mvc:form modelAttribute="vehicle" action="vehicleUpdate.mvc">
 		<table>
 			<tr>
-				<td>Vehicle Type</td>
-				<td>${item.vehicleType}</td>
+				<th>Selected</th>
+				<th>Vehicle Type</th>
+				<th>Make</th>
+				<th>Model</th>
+				<th>Cost</th>
+				<th>Passengers</th>
+
 			</tr>
-			<tr>
-				<td>Make</td>
-				<td>${item.make}</td>
-			</tr>
-			<tr>
-				<td>Model</td>
-				<td>${item.model}</td>
-			</tr>
-			<tr>
-				<td>Cost</td>
-				<td>${item.cost}</td>
-			</tr>
-			<tr>
-				<td>Number of Passengers</td>
-				<td>${item.numberOfPassengers}</td>
-			</tr>
+			<c:forEach items="${all}" var="item">
+				<tr>
+					<td><input type="radio" name="vehicleId"
+						value="${item.vehicleId}"></td>
+					<td>${item.vehicleType}</td>
+
+					<td>${item.make}</td>
+
+					<td>${item.model}</td>
+
+					<td>${item.cost}</td>
+
+					<td>${item.numberOfPassengers}</td>
+
+				</tr>
+
+
+			</c:forEach>
 		</table>
-		<br />
-		<hr style="text-align: left; margin-left: 0; width: 25%">
-		<br />
-	</c:forEach>
+<br />
+		<input type="submit" value="Edit Selected Vehicle"
+			name="doThisToVehicle">
+		<input type="submit" value="Delete Selected Vehicle"
+			name="doThisToVehicle">
+	</mvc:form>
+	<br />
 	<a href="vehicleForm.mvc">Add a new vehicle</a>
+	<br />
+	<a href="home.mvc">Back to main menu</a>
+	<br />
 </body>
 </html>
