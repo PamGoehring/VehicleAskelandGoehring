@@ -50,6 +50,9 @@
 			</tr>
 
 		</table>
+		
+		<input type="submit" value="Edit Selected Renter" name="doThisToRenter">
+		<input type="submit" value="Delete Selected Renter" name="doThisToRenter">
 		<br />
 		<hr style="text-align: left; margin-left: 0; width: 25%">
 		<br />

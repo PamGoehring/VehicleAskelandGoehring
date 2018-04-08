@@ -3,7 +3,14 @@ package edu.dmacc.spring.vehicleaskelandgoehring;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.io.IOException;
 import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 
@@ -99,7 +106,50 @@ public class RenterController {
 		modelAndView.addObject("all", allVehicles);
 		return modelAndView;
 	}
+	
+	//Renter edit
+	@RequestMapping(value = "/renterEditResult")
+	public ModelAndView processEditRenter(Renter renter) {
+		ModelAndView modelAndView = new ModelAndView();
+		dao.editRenter(renter);
+		modelAndView.setViewName("renterResult");
+		modelAndView.addObject("r", renter);
+		return modelAndView;
+	}
+	//Renter update and delete
+	@RequestMapping(value = "/renterUpdate")
+	public ModelAndView renterUpdate(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException { 
+		String act = request.getParameter("doThisToRenter"); 
+		ModelAndView modelAndView = new ModelAndView();
+		 if (act.equals("Edit Selected Renter")) {
+			String checkId = request.getParameter("renterId"); 
+			System.out.println("id" + checkId);
+			
+			Integer tempId = Integer.parseInt(request.getParameter("renterId"));
+			System.out.println("temp id " + tempId);
+			Renter renterToEdit = dao.searchForRenterById(tempId);
+			request.setAttribute("renterToEdit", renterToEdit);
+			
+			modelAndView.setViewName("editRenter");
+			modelAndView.addObject("all", renterToEdit);		 
+			 
+		} else if (act.equals("Delete Selected Renter")) {
+			String checkId = request.getParameter("renterId");
+			System.out.println("id" + checkId);
+			
+			Integer tempId = Integer.parseInt(request.getParameter("renterId"));
+			Renter renterToDelete = dao.searchForRenterById(tempId);
 
+			dao.deleteRenter(renterToDelete); 
+			 List<Renter> allRenters = dao.getAllRenters();
+			 modelAndView.setViewName("viewAllRenters");
+			 modelAndView.addObject("all", allRenters);  
+		}
+		 return modelAndView;
+	}
+
+	// renter bean
 	@Bean
 	public RenterDao dao() {
 		RenterDao bean = new RenterDao();
