@@ -26,18 +26,41 @@ public class RenterDao {
 		return all;
 	}
 
-//Playing with renter delete, not tested yet, referenced ConsoleGalleryApp for code examples
-	public void deleteRenter(Renter renterToDelete) {
+	//Renter delete
+	public void deleteRenter(Renter rentertoDelete) {
+		// TODO Auto-generated method stub
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
-		TypedQuery<Renter> typedQuery = em.createQuery("select r from Renter r where r.firstName = :selectedFirstName and r.lastName = :selectedLastName", Renter.class);
-		typedQuery.setParameter("selectedFirstName", renterToDelete.getFirstName());
-		typedQuery.setParameter("selectedLastName",  renterToDelete.getLastName());
+		TypedQuery<Renter> typedQuery = em.createQuery(
+				"select li from Renter li where li.renterId = :selectedId",
+				Renter.class);
+		typedQuery.setParameter("selectedId", rentertoDelete.getRenterId()); 
 		typedQuery.setMaxResults(1);
 		Renter result = typedQuery.getSingleResult();
+		System.out.println("TEST - result: " + result);
 		em.remove(result);
 		em.getTransaction().commit();
 		em.close();
-		
 	}
+
+	//Renter id search
+	public Renter searchForRenterById(int idToEdit) {
+		// TODO Auto-generated method stub
+		EntityManager em = emfactory.createEntityManager();
+		em.getTransaction().begin();
+		Renter foundItem =  em.find(Renter.class, idToEdit);
+		em.close();
+		return foundItem; 
+	}
+
+	//Renter edit
+	public void editRenter(Renter toEdit) {
+		// TODO Auto-generated method stub
+		EntityManager em = emfactory.createEntityManager();
+		em.getTransaction().begin(); 
+		em.merge(toEdit);
+		em.getTransaction().commit();
+		em.close();
+	}
+
 }
