@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+
 import java.io.IOException;
 import java.util.List;
 
@@ -149,6 +150,47 @@ public class RenterController {
 		 return modelAndView;
 	}
 
+	@RequestMapping(value = "/vehicleEditResult")
+	public ModelAndView processEditVehicle(Vehicle vehicle) {
+		ModelAndView modelAndView = new ModelAndView();
+		vdao.editVehicle(vehicle);
+		modelAndView.setViewName("vehicleResult");
+		modelAndView.addObject("v", vehicle);
+		return modelAndView;
+	}
+	
+	@RequestMapping(value = "/vehicleUpdate")
+	public ModelAndView vehicleUpdate(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException { 
+		String act = request.getParameter("doThisToVehicle"); 
+		ModelAndView modelAndView = new ModelAndView();
+		 if (act.equals("Edit Selected Vehicle")) {
+			String checkId = request.getParameter("vehicleId"); 
+			System.out.println(checkId);
+			Integer tempId = Integer.parseInt(request.getParameter("vehicleId"));
+			System.out.println("temp id " + tempId);
+			Vehicle vehicleToEdit = vdao.searchForVehicleById(tempId);
+			request.setAttribute("vehicleToEdit", vehicleToEdit);
+			
+			modelAndView.setViewName("editVehicle");
+			modelAndView.addObject("all", vehicleToEdit);		 
+			 
+		} else if (act.equals("Delete Selected Vehicle")) {
+			String checkId = request.getParameter("vehicleId");
+			System.out.println("id" + checkId);
+			
+			Integer tempId = Integer.parseInt(request.getParameter("vehicleId"));
+			Vehicle vehicleToDelete = vdao.searchForVehicleById(tempId);
+
+			vdao.deleteVehicle(vehicleToDelete); 
+			 List<Vehicle> allVehicles = vdao.getAllVehicles();
+			 modelAndView.setViewName("viewAllVehicles");
+			 modelAndView.addObject("all", allVehicles);  
+		}
+		 return modelAndView;
+	}
+	
+	
 	// renter bean
 	@Bean
 	public RenterDao dao() {

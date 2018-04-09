@@ -7,6 +7,23 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Vehicle Entered</title>
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 60%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 4px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
 </head>
 <body>
 	<h2>Vehicle Registration Result</h2>
@@ -32,6 +49,7 @@
 			<td>${v.numberOfPassengers}</td>
 		</tr>
 	</table>
+	<br />
 <a href="viewAllVehicles.mvc">View all Vehicles</a>
 </body>
 </html>
