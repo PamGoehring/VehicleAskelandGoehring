@@ -65,7 +65,7 @@ public class RenterController {
 	}
 
 	// Renter result page
-	@RequestMapping(value = "/result")
+	@RequestMapping(value = "/renterResult")
 	public ModelAndView processRenter(Renter renter) {
 		System.out.println("In processRenter");
 		ModelAndView modelAndView = new ModelAndView();

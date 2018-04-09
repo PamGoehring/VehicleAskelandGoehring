@@ -27,6 +27,7 @@ tr:nth-child(even) {
 </style>
 </head>
 <body>
+<img src="https://www.rentcar.pl/blog/wp-content/uploads/2014/12/RentCar.pl-10-tips.png">
 <h2>All Available Vehicles</h2>
 	<mvc:form modelAttribute="vehicle" action="vehicleUpdate.mvc">
 		<table>
