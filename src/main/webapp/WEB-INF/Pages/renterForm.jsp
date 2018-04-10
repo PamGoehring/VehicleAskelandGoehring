@@ -40,7 +40,7 @@ tr:nth-child(even) {
 			</tr>
 			<tr>
 				<td><mvc:label path="age">Age</mvc:label></td>
-				<td><mvc:password path="age" /></td>
+				<td><mvc:input path="age" /></td>
 			</tr>
 			<tr>
 				<td><mvc:label path="insuranceCompany">Insurance Company</mvc:label></td>
