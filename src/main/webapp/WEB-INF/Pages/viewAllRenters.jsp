@@ -8,55 +8,77 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>All Renters</title>
+<style>
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 60%;
+}
+
+td, th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 4px;
+}
+
+tr:nth-child(even) {
+	background-color: #dddddd;
+}
+</style>
 </head>
 <body>
-	<c:forEach items="${all}" var="item">
+<img src="https://www.rentcar.pl/blog/wp-content/uploads/2014/12/RentCar.pl-10-tips.png">
+	<h2>View All Renters</h2>
+	<mvc:form modelAttribute="renter" action="renterUpdate.mvc">
 		<table>
 			<tr>
-				<td>First Name</td>
-				<td>${item.firstName}</td>
-			</tr>
-			<tr>
-				<td>Last Name</td>
-				<td>${item.lastName}</td>
-			</tr>
-			<tr>
-				<td>Age</td>
-				<td>${item.age}</td>
-			</tr>
-			<tr>
-				<td>Insurance Company</td>
-				<td>${item.insuranceCompany}</td>
-			</tr>
-			<tr>
-				<td>Phone Number</td>
-				<td>${item.phoneNumber}</td>
-			</tr>
-			<tr>
-				<td>Address</td>
-				<td>${item.address}</td>
-			</tr>
-			<tr>
-				<td>City</td>
-				<td>${item.city}</td>
-			</tr>
-			<tr>
-				<td>State</td>
-				<td>${item.state}</td>
-			</tr>
-			<tr>
-				<td>Zip</td>
-				<td>${item.zip}</td>
-			</tr>
+				<th>Renter Id</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Age</th>
+				<th>Insurance Company</th>
+				<th>Phone Number</th>
+				<th>Address</th>
+				<th>City</th>
+				<th>State</th>
+				<th>Zip</th>
 
+			</tr>
+			<c:forEach items="${all}" var="item">
+				<tr>
+					<td><input type="radio" name="renterId"
+						value="${item.renterId}"></td>
+
+					<td>${item.firstName}</td>
+
+					<td>${item.lastName}</td>
+
+					<td>${item.age}</td>
+
+					<td>${item.insuranceCompany}</td>
+
+					<td>${item.phoneNumber}</td>
+
+					<td>${item.address}</td>
+
+					<td>${item.city}</td>
+
+					<td>${item.state}</td>
+
+					<td>${item.zip}</td>
+				</tr>
+			</c:forEach>
 		</table>
-		
-		<input type="submit" value="Edit Selected Renter" name="doThisToRenter">
-		<input type="submit" value="Delete Selected Renter" name="doThisToRenter">
 		<br />
-		<hr style="text-align: left; margin-left: 0; width: 25%">
-		<br />
-	</c:forEach>
-	<a href="home.mvc">Add a new renter</a>
+		<input type="submit" value="Edit Selected Renter"
+			name="doThisToRenter">
+		<input type="submit" value="Delete Selected Renter"
+			name="doThisToRenter">
+	</mvc:form>
+	<br />
+	<a href="form.mvc">Add New Renter</a>
+	<br />
+	<a href="home.mvc">Back To Main Menu</a>
+	<br />
 </body>
 </html>

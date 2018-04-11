@@ -9,6 +9,7 @@
 <title>Edit Vehicle</title>
 </head>
 <body>
+<img src="https://www.rentcar.pl/blog/wp-content/uploads/2014/12/RentCar.pl-10-tips.png">
 	<h2>Edit Vehicle</h2>
 	<mvc:form modelAttribute="vehicle" action="vehicleEditResult.mvc">
  

@@ -9,6 +9,7 @@
 <title>Spring Vehicle Form</title>
 </head>
 <body>
+<img src="https://www.rentcar.pl/blog/wp-content/uploads/2014/12/RentCar.pl-10-tips.png">
 	<h2>Vehicle Form</h2>
 	<mvc:form modelAttribute="vehicle" action="vehicleResult.mvc">
 		<table>
@@ -40,6 +41,6 @@
 
 		</table>
 	</mvc:form>
-	<a href="viewAll.mvc">View All Vehicles</a>
+	<a href="viewAllVehicles.mvc">View All Vehicles</a>
 </body>
 </html>
