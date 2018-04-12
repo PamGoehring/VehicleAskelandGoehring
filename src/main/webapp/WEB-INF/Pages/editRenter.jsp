@@ -9,50 +9,63 @@
 <title>Edit Renter</title>
 <style>
 table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 60%;
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 60%;
 }
 
 td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 4px;
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 4px;
 }
 
 tr:nth-child(even) {
-    background-color: #dddddd;
+	background-color: #dddddd;
 }
 </style>
 </head>
 <body>
-<img src="https://www.rentcar.pl/blog/wp-content/uploads/2014/12/RentCar.pl-10-tips.png">
+	<img
+		src="https://www.rentcar.pl/blog/wp-content/uploads/2014/12/RentCar.pl-10-tips.png">
 	<h2>Edit Renter</h2>
 	<mvc:form modelAttribute="renter" action="renterEditResult.mvc">
- 
-		First Name: <input 
-			type="text" name="firstName"
-			value="${renterToEdit.firstName }"> 
-		 Last Name: <input 
-			type="text" name="lastName"
-			value="${renterToEdit.lastName }">
-		Age: <input 
-			type="text" name="age"
-			value="${renterToEdit.age }">
-		 Employer: <input 
-			type="text" name="insuranceCompany"
-			value="${renterToEdit.insuranceCompany }">
-		 Income: <input 
-			type="text" name="phoneNumber"
-			value="${renterToEdit.phoneNumber }">
-			
-		Phone Number: <input 
-			type="text" name="address"
-			value="${renterToEdit.address }">
-			
-		<input type="hidden"
-			name="renterId" value="${renterToEdit.renterId }">
-		 <input type="submit" value="Save Edited renter">
+		<table>
+			<tr>
+				<td>First Name:</td>
+				<td><input type="text" name="firstName"
+					value="${renterToEdit.firstName }"></td>
+			</tr>
+			<tr>
+				<td>Last Name:</td>
+				<td><input type="text" name="lastName"
+					value="${renterToEdit.lastName }"></td>
+			</tr>
+			<tr>
+				<td>Age:</td>
+				<td><input type="text" name="age" value="${renterToEdit.age }"></td>
+			</tr>
+			<tr>
+				<td>Employer:</td>
+				<td><input type="text" name="insuranceCompany"
+					value="${renterToEdit.insuranceCompany }"></td>
+			</tr>
+			<tr>
+				<td>Income:</td>
+				<td><input type="text" name="phoneNumber"
+					value="${renterToEdit.phoneNumber }"></td>
+			</tr>
+
+			<tr>
+				<td>Phone Number:</td>
+				<td><input type="text" name="address"
+					value="${renterToEdit.address }"></td>
+			</tr>
+
+		</table>
+		<br />
+		<input type="hidden" name="renterId" value="${renterToEdit.renterId }">
+		<input type="submit" value="Save Edited renter">
 	</mvc:form>
 	<a href="viewAllRenters.mvc">View all Renters</a>
 	<a href="home.mvc">Back to main menu</a>
