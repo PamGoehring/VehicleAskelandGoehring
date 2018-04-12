@@ -12,7 +12,7 @@
 table {
 	font-family: arial, sans-serif;
 	border-collapse: collapse;
-	width: 60%;
+	width: 90%;
 }
 
 td, th {
@@ -42,6 +42,7 @@ tr:nth-child(even) {
 				<th>City</th>
 				<th>State</th>
 				<th>Zip</th>
+				<th>Vehicle</th>
 
 			</tr>
 			<c:forEach items="${all}" var="item">
@@ -66,6 +67,8 @@ tr:nth-child(even) {
 					<td>${item.state}</td>
 
 					<td>${item.zip}</td>
+					
+					<td>${item.vehicleId}</td>
 				</tr>
 			</c:forEach>
 		</table>
