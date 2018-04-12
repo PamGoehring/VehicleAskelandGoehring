@@ -21,6 +21,7 @@ public class Renter {
 	private String city;
 	private String state;
 	private String zip;
+	private int vehicleId;
 	
 	public int getRenterId() {
 		return renterId;
@@ -81,6 +82,13 @@ public class Renter {
 	}
 	public void setZip(String zip) {
 		this.zip = zip;
+	}
+	
+	public int getVehicleId() {
+		return vehicleId;
+	}
+	public void setVehicleId(int vehicleId) {
+		this.vehicleId = vehicleId;
 	}
 	public Renter() {
 		super();

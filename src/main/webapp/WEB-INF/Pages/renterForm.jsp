@@ -9,24 +9,25 @@
 <title>Spring Renter Form Handling</title>
 <style>
 table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 60%;
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 60%;
 }
 
 td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 4px;
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 4px;
 }
 
 tr:nth-child(even) {
-    background-color: #dddddd;
+	background-color: #dddddd;
 }
 </style>
 </head>
 <body>
-<img src="https://www.rentcar.pl/blog/wp-content/uploads/2014/12/RentCar.pl-10-tips.png">
+	<img
+		src="https://www.rentcar.pl/blog/wp-content/uploads/2014/12/RentCar.pl-10-tips.png">
 	<h2>Add Renter Information</h2>
 	<mvc:form modelAttribute="renter" action="renterResult.mvc">
 		<table>
@@ -67,7 +68,10 @@ tr:nth-child(even) {
 				<td><mvc:label path="zip">Zip</mvc:label></td>
 				<td><mvc:input path="zip" /></td>
 			</tr>
-
+			<tr>
+				<td><mvc:label path="vehicleId">Vehicle ID</mvc:label></td>
+				<td><mvc:input path="vehicleId" /></td>
+			</tr>
 			<tr>
 				<td colspan="2"><input type="submit" value="Submit" /></td>
 			</tr>

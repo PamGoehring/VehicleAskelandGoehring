@@ -34,32 +34,49 @@ tr:nth-child(even) {
 			<tr>
 				<td>First Name:</td>
 				<td><input type="text" name="firstName"
-					value="${renterToEdit.firstName }"></td>
+					value="${renterToEdit.firstName}"></td>
 			</tr>
 			<tr>
 				<td>Last Name:</td>
 				<td><input type="text" name="lastName"
-					value="${renterToEdit.lastName }"></td>
+					value="${renterToEdit.lastName}"></td>
 			</tr>
 			<tr>
 				<td>Age:</td>
-				<td><input type="text" name="age" value="${renterToEdit.age }"></td>
+				<td><input type="text" name="age" value="${renterToEdit.age}"></td>
 			</tr>
 			<tr>
-				<td>Employer:</td>
+				<td>Insurance Company:</td>
 				<td><input type="text" name="insuranceCompany"
-					value="${renterToEdit.insuranceCompany }"></td>
+					value="${renterToEdit.insuranceCompany}"></td>
 			</tr>
-			<tr>
-				<td>Income:</td>
-				<td><input type="text" name="phoneNumber"
-					value="${renterToEdit.phoneNumber }"></td>
-			</tr>
-
 			<tr>
 				<td>Phone Number:</td>
+				<td><input type="text" name="phoneNumber"
+					value="${renterToEdit.phoneNumber}"></td>
+			</tr>
+			<tr>
+				<td>Address:</td>
 				<td><input type="text" name="address"
-					value="${renterToEdit.address }"></td>
+					value="${renterToEdit.address}"></td>
+			</tr>
+			<tr>
+				<td>City:</td>
+				<td><input type="text" name="city" value="${renterToEdit.city}"></td>
+			</tr>
+			<tr>
+				<td>State:</td>
+				<td><input type="text" name="state"
+					value="${renterToEdit.state}"></td>
+			</tr>
+			<tr>
+				<td>Zip:</td>
+				<td><input type="text" name="zip" value="${renterToEdit.zip}"></td>
+			</tr>
+			<tr>
+				<td>Vehicle ID:</td>
+				<td><input type="text" name="vehicleId"
+					value="${renterToEdit.vehicleId}"></td>
 			</tr>
 
 		</table>

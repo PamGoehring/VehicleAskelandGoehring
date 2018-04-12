@@ -9,7 +9,8 @@
 <title>Renter Entered</title>
 </head>
 <body>
-<img src="https://www.rentcar.pl/blog/wp-content/uploads/2014/12/RentCar.pl-10-tips.png">
+	<img
+		src="https://www.rentcar.pl/blog/wp-content/uploads/2014/12/RentCar.pl-10-tips.png">
 	<h2>Renter Registration Result</h2>
 	<table>
 		<tr>
@@ -47,6 +48,10 @@
 		<tr>
 			<td>Zip</td>
 			<td>${r.zip}</td>
+		</tr>
+		<tr>
+			<td>Vehicle Id</td>
+			<td>${r.vehicleId}</td>
 		</tr>
 	</table>
 	<br />

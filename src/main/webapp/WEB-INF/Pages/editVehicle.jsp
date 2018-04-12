@@ -9,19 +9,19 @@
 <title>Edit Vehicle</title>
 <style>
 table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 50%;
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 50%;
 }
 
 td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 4px;
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 4px;
 }
 
 tr:nth-child(even) {
-    background-color: #dddddd;
+	background-color: #dddddd;
 }
 </style>
 </head>
@@ -32,35 +32,36 @@ tr:nth-child(even) {
 	<mvc:form modelAttribute="vehicle" action="vehicleEditResult.mvc">
 		<table>
 			<tr>
-				<td>Vehicle Type: </td> <td><input type="text" name="vehicleType"
-					value="${vehicleToEdit.vehicleType}">
-				</td>
+				<td>Vehicle Type:</td>
+				<td><input type="text" name="vehicleType"
+					value="${vehicleToEdit.vehicleType}"></td>
 			</tr>
 			<tr>
-				<td>Make: </td> <td><input type="text" name="make"
+				<td>Make:</td>
+				<td><input type="text" name="make"
 					value="${vehicleToEdit.make }"></td>
 			</tr>
 			<tr>
-				<td>Model: </td> <td><input type="text" name="model" value="${vehicleToEdit.model }">
-			</td>
+				<td>Model:</td>
+				<td><input type="text" name="model"
+					value="${vehicleToEdit.model }"></td>
 			</tr>
 			<tr>
-				<td>Number of Passengers: </td> <td>
-			<input type="text" name="numberOfPassengers"
-				value="${vehicleToEdit.numberOfPassengers }">
-			</td>
+				<td>Number of Passengers:</td>
+				<td><input type="text" name="numberOfPassengers"
+					value="${vehicleToEdit.numberOfPassengers }"></td>
 			</tr>
 			<tr>
-				<td>Cost:</td> <td>
-			<input type="text" name="cost" value="${vehicleToEdit.cost }">
-			</td>
+				<td>Cost:</td>
+				<td><input type="text" name="cost"
+					value="${vehicleToEdit.cost }"></td>
 			</tr>
-</table>
-<br />
-			<input type="hidden" name="vehicleId"
-				value="${vehicleToEdit.vehicleId }">
-			<input type="submit" value="Save Edited vehicle">
-			
+		</table>
+		<br />
+		<input type="hidden" name="vehicleId"
+			value="${vehicleToEdit.vehicleId }">
+		<input type="submit" value="Save Edited vehicle">
+
 	</mvc:form>
 	<a href="viewAllVehicles.mvc">View all Vehicles</a>
 	<a href="home.mvc">Back to main menu</a>
