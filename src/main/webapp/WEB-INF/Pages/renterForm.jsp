@@ -70,7 +70,8 @@ tr:nth-child(even) {
 			</tr>
 			<tr>
 				<td><mvc:label path="vehicleId">Vehicle ID</mvc:label></td>
-				<td><mvc:input path="vehicleId" /></td>
+				<td><mvc:select name="vehicleId" path="vehicleId" items="${allVehicles}" itemLabel="vehicleId" itemValue="vehicleId" /></td>
+				<%-- 				<td><mvc:input path="vehicleId" /></td> --%>
 			</tr>
 			<tr>
 				<td colspan="2"><input type="submit" value="Submit" /></td>
