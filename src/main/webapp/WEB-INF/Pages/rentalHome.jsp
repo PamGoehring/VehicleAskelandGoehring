@@ -29,7 +29,7 @@ tr:nth-child(even) {
 	<h1>Rent From Us</h1>
 	<a href="form.mvc">Add Renter Information</a>
 	<br />
-	<a href="vehicleForm.mvc">Select Vehicle Information</a>
+	<a href="vehicleForm.mvc">Add Vehicle Information</a>
 	<br />
 	<a href="viewAllRenters.mvc">View All Renters</a>
 	<br />
