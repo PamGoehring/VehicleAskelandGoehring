@@ -31,9 +31,11 @@ public class RenterController {
 	@RequestMapping(value = "/form")
 	public ModelAndView renter() {
 		ModelAndView modelAndView = new ModelAndView();
+		List<Vehicle> allVehicles = vdao.getAllVehicles();
 		modelAndView.setViewName("renterForm");
 		modelAndView.addObject("renter", new Renter());
 		modelAndView.addObject("states", states);
+		modelAndView.addObject("allVehicles", allVehicles);
 		return modelAndView;
 	}
 
